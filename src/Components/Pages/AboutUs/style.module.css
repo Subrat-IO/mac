@@ -1,0 +1,428 @@
+.pageWrapper {
+  width: 100%;
+  padding-top: 100px; /* navbar + topbar */
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #c59a00; /* yellowish like screenshot */
+}
+
+/* ===== Banner ===== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+}
+
+/* Title text */
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+
+/* ========= WHO WE ARE WRAPPER ========= */
+.aboutSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* Left Image */
+.leftImage img {
+  width: 480px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Right Area */
+.rightContent {
+  flex: 1;
+}
+
+.heading {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 12px 25px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.activeTab {
+  background: white;
+  border-bottom: 3px solid #1d4ed8;
+  color: #1d4ed8;
+}
+
+/* Content Box */
+.tabContent {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+
+.tabContent ul {
+  margin-top: 10px;
+}
+
+.tabContent li {
+  margin-bottom: 10px;
+}
+
+/* CTA button */
+.cta {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: #189943;
+  color: rgb(172, 191, 0);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ========= WHO WE ARE WRAPPER ========= */
+.aboutSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* Left Image */
+.leftImage img {
+  width: 530px;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Right Area */
+.rightContent {
+  flex: 1;
+}
+
+.heading {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+/* ========= TABS EXACT LOOK ========= */
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 0;
+}
+
+.tabs button {
+  padding: 14px 30px;
+  background: #f1f1f1;
+  border: 1px solid #dcdcdc;
+  border-bottom: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.tabs button:not(.activeTab) {
+  background: #f5f5f5;
+}
+
+.activeTab {
+  background: white;
+  color: #222;
+  border-top: 3px solid #000; /* the dark line at top of active tab */
+}
+
+/* ========= TAB CONTENT BOX ========= */
+.tabContent {
+  background: white;
+  border: 1px solid #dcdcdc;
+  padding: 25px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: -1px; /* make box touch active tab */
+  border-radius: 0px 5px 5px 5px;
+  color: #444;
+}
+
+.tabContent ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.tabContent li {
+  margin-bottom: 10px;
+}
+
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 992px) {
+  .aboutSection {
+    flex-direction: column;
+  }
+
+  .leftImage img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.section {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 480px;
+  background: #fff;
+  padding-top: 38px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+.left {
+  flex: 1 1 520px;
+  max-width: 520px;
+  padding: 0 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.heading {
+  font-size: 2.65rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #232323;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.subHeading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+  color: #232323;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.underline {
+  width: 100%;
+  height: 2px;
+  background: #59c39b;
+  margin-bottom: 18px;
+  opacity: 0.57;
+}
+.description {
+  font-size: 1.08rem;
+  margin-bottom: 28px;
+  color: #444;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 26px;
+}
+.list li {
+  font-size: 1.13rem;
+  margin-bottom: 16px;
+  color: #353535;
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.icon {
+  color: #ffd23e;
+  font-size: 1.23em;
+  margin-right: 14px;
+}
+.button {
+  background: #27c79a;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  font-size: 1.11rem;
+  font-weight: 600;
+  padding: 12px 36px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(40, 50, 80, 0.09);
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.button:hover {
+  background: #1db484;
+  box-shadow: 0 8px 24px rgba(40, 50, 80, 0.18);
+}
+
+.right {
+  flex: 1 1 550px;
+  max-width: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.image {
+  min-width: 370px;
+  width: 98%;
+  max-width: 98vw;
+  border-radius: 8px;
+  box-shadow: 0 2px 24px rgba(40, 50, 80, 0.15);
+  object-fit: cover;
+}
+
+@media (max-width: 950px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 38px;
+  }
+  .left, .right {
+    max-width: 99vw;
+    padding: 0 8px;
+  }
+  .image {
+    min-width: 240px;
+    max-width: 99vw;
+    margin-top: 28px;
+  }
+}
+/* ===== Testimonials Section ===== */
+.testimonialSection {
+  padding: 50px 0 80px;
+  background: #fff;
+}
+
+.testimonialHeading {
+  font-size: 38px;
+  font-weight: 700;
+margin-bottom: 30px;
+  color: #222;
+}
+
+.testimonialSub {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+/* Card layout */
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  min-height: 320px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* Quote text */
+.quote {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile span {
+  display: block;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonialHeading {
+    font-size: 30px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,239 @@
+.hero {
+  width: 100vw;
+  min-height: 350px;
+  max-height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33,34,51, 0.44);
+  z-index: 1;
+  pointer-events: none;
+}
+.breadcrumbs {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1.07rem;
+  color: #cdb773;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: #fff;
+}
+.breadcrumbCurrent {
+  color: #997b16;
+  font-weight: 600;
+}
+.title {
+  z-index: 2;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 42px 0 0 0;
+  filter: drop-shadow(1px 2px 16px #222a3d66);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+@media (max-width: 750px) {
+  .hero {
+    min-height: 110px;
+    max-height: 120px;
+  }
+  .title {
+    font-size: 1.55rem;
+    margin-top: 25px;
+  }
+}
+
+
+.wrapper {
+  width: 93vw;
+  max-width: 1200px;
+  margin: 25px auto 0 auto;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.columns {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.left, .right {
+  flex: 1 1 380px;
+  max-width: 480px;
+}
+.cross {
+  text-align: center;
+  font-size: 1.07rem;
+  color: #555;
+  margin-bottom: 7px;
+}
+.heading {
+  text-align: center;
+  font-size: 2.17rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 0px;
+}
+.hrAccent {
+  width: 42px;
+  height: 2.5px;
+  margin: 14px auto 22px auto;
+  background: linear-gradient(90deg,#24e5cb 45%,#2ac6db 55%);
+  border-radius: 2.5px;
+  opacity: 0.8;
+}
+.infoText {
+  text-align: left;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.65;
+}
+.link {
+  color: #208ad6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Form grid */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 16px;
+}
+.row {
+  display: flex;
+  gap: 9px;
+}
+.rowFull {
+  display: flex;
+  width: 100%;
+  margin-bottom: 6px;
+}
+.input, .select, .textarea {
+  flex: 1;
+  font-size: 1.04rem;
+  padding: 10px;
+  border: 1.3px solid #d9e2ea;
+  border-radius: 4px;
+  margin-bottom: 0;
+  background: #fff;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.input:focus, .select:focus, .textarea:focus {
+  border-color: #24e5cb;
+}
+.select {
+  width: 100%;
+}
+.textarea {
+  width: 100%;
+  resize: vertical;
+}
+.button {
+  padding: 8.5px 26px;
+  background: #ffd23e;
+  color: #2a2a2a;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border: none;
+  border-radius: 22px;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: background 0.19s;
+  box-shadow: 0 3px 13px rgba(40,50,80,0.09);
+}
+.button:hover {
+  background: #fae27a;
+}
+
+/* ===== Opening Days & Hours Section ===== */
+
+.hoursBox {
+  width: 100%;
+  text-align: left;
+  margin-top: 65px;
+  margin-left: 10rem;
+  padding-bottom: 40px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* "Come Pay Us A Visit" */
+.visit {
+  color: #808080;
+  font-size: 1.06rem;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Opening Days title */
+.hoursTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #232323;
+  line-height: 1.3;
+  margin: 5px 0 0 0;
+}
+
+/* Small green divider under heading */
+.hoursAccent {
+  width: 44px;
+  height: 2.8px;
+  background: linear-gradient(90deg,#28e6c2 40%, #22d8e1 60%);
+  margin: 12px auto 18px auto;
+  opacity: 0.85;
+  border-radius: 2px;
+}
+
+/* Work schedule text */
+.schedule {
+  font-size: 1.15rem;
+  color: #3a3a3a;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+/* PERSONAL FIX - Match original spacing exactly */
+.hoursWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hoursTitle {
+    font-size: 1.9rem;
+  }
+
+  .schedule {
+    font-size: 1.05rem;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .columns { flex-direction: column; gap: 22px; align-items: stretch; }
+  .left, .right { max-width: 97vw; margin-bottom: 18px;}
+}
+
+

@@ -1,0 +1,122 @@
+.banner {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.banner img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7) blur(0.5px);
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+}
+.bannerTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 2.8rem;
+  color: #fff;
+  font-family: 'Montserrat', 'Playfair Display', sans-serif;
+  margin-bottom: 42px;
+  text-shadow: 0 2px 22px #222;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 34px rgba(40,45,70,0.10);
+  padding: 28px 28px 32px 28px;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+  font-size: 1.08rem;
+  gap: 2vw;
+}
+.searchInput {
+  padding: 6px 11px;
+  border-radius: 6px;
+  border: 1px solid #d6d1c6;
+  font-size: 1.08em;
+  width: 210px;
+  background: #faf8f6;
+}
+
+/* =============== TABLE =============== */
+.tableScroller {
+  overflow-x: auto;
+}
+.dlTable {
+  width: 100%;
+  margin-top: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+}
+.dlTable th, .dlTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: left;
+  font-size: 1.06rem;
+}
+.dlTable th {
+  background: #fcf8f2;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+.dlTable td {
+  color: #444;
+}
+
+.pdfIcon {
+  display: inline-block;
+  vertical-align: middle;
+  color: #d23b3b;
+  margin-right: 10px;
+}
+.fileTitle {
+  font-size: 1.08em;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+/* Download button */
+.downloadBtn {
+  background: #4a85f6;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 7px;
+  padding: 7px 18px;
+  font-size: 1.01em;
+  text-decoration: none;
+  transition: background 0.16s;
+  border: none;
+}
+.downloadBtn:hover {
+  background: #2059b5;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .banner { height: 120px; }
+  .bannerTitle { font-size: 1.26rem; margin-bottom: 14px; }
+  .container { padding: 14px 3vw 16px 3vw; }
+  .controls { flex-direction: column; align-items: stretch; gap: 8px; }
+  .dlTable th, .dlTable td { padding: 8px 5px; font-size: 0.98em; }
+  .dlTable { min-width: 560px; }
+}

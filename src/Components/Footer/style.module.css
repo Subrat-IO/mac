@@ -1,0 +1,145 @@
+.footerMain {
+  background: #05225a;
+  color: #fff;
+  width: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- TOP GRID ---------- */
+.footerTop {
+  display: flex;
+  justify-content: center;        /* Center all columns as a GROUP */
+  padding: 50px 0 40px 0;
+  gap: 120px;                     /* Same spacing as screenshot */
+}
+
+/* Each column BOX is centered within group,
+   but CONTENT inside is LEFT ALIGNED */
+.footerColumn {
+  flex: 0 1 230px;
+  text-align: left;               /* IMPORTANT: left aligned text */
+}
+
+/* ---------- TITLES ---------- */
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: left;               /* left */
+}
+
+/* ---------- TEXT ---------- */
+.footerText {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.footerContact {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.footerHighlight {
+  color: #ffd23e;
+  font-weight: 600;
+}
+
+.footerLogo {
+  height: 55px;
+  margin-top: 10px;
+}
+
+/* ---------- QUICK LINKS ---------- */
+.footerLinks {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;               /* left aligned list */
+}
+
+.footerLinks li {
+  color: #ffd23e;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* ---------- LOCATION ---------- */
+.footerMapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;         /* LEFT aligned inside column */
+  text-align: left;
+}
+
+.footerMap {
+  width: 200px;
+  height: 120px;
+  border-radius: 10px;
+  border: 0;
+  margin-bottom: 12px;
+}
+
+.footerCards img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+/* ---------- BOTTOM BAR ---------- */
+.footerBottom {
+  display: flex;
+  justify-content: center;         /* Center whole bar */
+  align-items: center;
+  gap: 40px;
+  padding: 15px 0;
+  background: #f8f8f8;
+  color: #000;
+  border-top: 3px solid #fff;
+}
+
+.footerPolicyLinks {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footerPolicyLinks a {
+  color: #1d2e54;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footerPolicyLinks span {
+  opacity: 0.5;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 950px) {
+  .footerTop {
+    flex-direction: column;
+    align-items: center;          /* center columns */
+    gap: 40px;
+  }
+
+  .footerColumn {
+    width: 100%;
+    max-width: 310px;             /* keeps readable width */
+    text-align: left;
+  }
+
+  .footerMapContainer {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 650px) {
+  .footerBottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

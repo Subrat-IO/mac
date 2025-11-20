@@ -1,0 +1,150 @@
+.section {
+  padding: 40px 0 64px 0;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 0.01em;
+  color: #34345b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-gap: 52px 10vw;
+  width: 80vw;
+  max-width: 1200px;
+  margin: 38px auto 0 auto;
+}
+
+.serviceCard {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 16px 15px 30px 20px;
+  min-height: 180px;
+  animation: rightIn 0.95s cubic-bezier(.44,1.7,.39,.97) both;
+}
+
+@keyframes rightIn {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.icon {
+  font-size: 3.15rem;
+  color: #ffd23e;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 1.35rem;
+  color: #2447de;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.detail {
+  color: #565656;
+  font-size: 1.05rem;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.link {
+  color: #2447de;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  transition: color 0.17s;
+  z-index: 2;
+  background: #fff;
+}
+
+.link:hover {
+  color: #ffd23e;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 32px 0;
+    width: 96vw;
+    margin: 18px auto 0 auto;
+  }
+  .serviceCard {
+    min-height: 170px;
+    padding: 14px 10px 32px 10px;
+  }
+}
+
+
+
+.container {
+  max-width: 750px;
+  margin: 148px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 32px rgba(33, 33, 33, 0.08);
+}
+
+.breadcrumb {
+  color: #b48f2c;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #233251;
+  margin-bottom: 12px;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.note {
+  font-size: 1rem;
+  color: #233251;
+  margin-bottom: 20px;
+}
+
+.links {
+  margin-top: 18px;
+}
+
+.link {
+  color: #d4ad37;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #a07c1c;
+}

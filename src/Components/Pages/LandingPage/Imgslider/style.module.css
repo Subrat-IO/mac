@@ -1,0 +1,134 @@
+/* Fullscreen slider */
+.slider {
+  width: 100%;
+  height: 100vh;
+  margin-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slide background */
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  padding-left: 12%;
+  position: relative;
+}
+
+/* Dark gradient overlay */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 40%,
+      rgba(0, 0, 0, 0.15) 70%,
+      rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+/* TEXT WRAPPER - appears AFTER image */
+.content {
+  position: relative;
+  z-index: 5;
+  max-width: 600px;
+  opacity: 0;
+  animation: fadeBlock 1s ease forwards;
+  animation-delay: 0.6s; /* Delay before text appears */
+}
+
+/* Heading */
+.fadeText {
+  font-size: 56px;
+  color: #f4a51c;
+  font-weight: 700;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 1.1s ease forwards;
+  animation-delay: 0.9s; /* After wrapper */
+}
+
+/* Paragraph */
+.content p {
+  font-size: 19px;
+  color: white;
+  max-width: 580px;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: fadeUp 1.1s ease forwards;
+  animation-delay: 1.15s;
+}
+
+/* Button */
+.fadeBtn {
+  background: #002d62;
+  color: rgb(214, 196, 26);
+  padding: 8px 20px;
+  border: none;
+  font-size: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 1.1s ease forwards;
+  animation-delay: 1.35s;
+}
+
+.fadeBtn:hover {
+  background: #003f8c;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.left {
+  left: 16px;
+}
+.right {
+  right: 16px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
