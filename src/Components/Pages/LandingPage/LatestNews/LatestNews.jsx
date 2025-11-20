@@ -15,7 +15,7 @@ function LatestNews() {
         <div className={styles.lnsCard}>
           <div className={styles.lnsCardImgBox}>
             <img
-              src="/assets/Logo.png"
+              src="/Logo.png"
               alt="MAC Logo"
               className={styles.lnsCardImg}
             />
@@ -39,7 +39,7 @@ function LatestNews() {
         <div className={styles.lnsCard}>
           <div className={styles.lnsCardImgBox}>
             <img
-              src="/assets/Logo.png"
+              src="/Logo.png"
               alt="MAC Logo"
               className={styles.lnsCardImg}
             />
