@@ -3,8 +3,13 @@ import styles from "./style.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import sliderImage1 from "/slider.jpeg";
-import sliderImage2 from "/slider1.jpeg";
+import sliderImage1 from "/slider1.jpeg";
+import sliderImage2 from "/aubmed.webp";
+import sliderImage3 from "/auis-01-01.webp";
+import sliderImage4 from "/BIMAP.webp";
+import sliderImage5 from "/BVTB.webp";
+import sliderImage6 from "/GRACETRUTH.webp";
+import sliderImage7 from "/holistic-01.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -37,56 +42,58 @@ function Tertiary() {
         <div className="col-md-5">
           <div className={styles.videoWrapper}>
             <img
-              src="/man-7895205.jpg"
+              src="/src/assets/portrait-businessman-smiling.jpg"
               alt="MAC 20th Anniversary"
               className={styles.responsiveImage}
             />
           </div>
         </div>
       </div>
-     {/* -------- LOGO SLIDER SECTION -------- */}
-<div className={`mx-auto text-center mb-5 mt-5 ${styles.sliderSection}`}>
-  <h4 className={styles.logoTitle}>
-    List of Tertiary Education and Training Providers
-  </h4>
+      {/* -------- LOGO SLIDER SECTION -------- */}
+      <div className={`mx-auto text-center mb-5 mt-5 ${styles.sliderSection}`}>
+        <h4 className={styles.logoTitle}>
+          List of Tertiary Education and Training Providers
+        </h4>
 
-  <Swiper
-    className={styles.swiperBox}
-    modules={[Autoplay, Pagination]}
-    slidesPerView={5}
-    spaceBetween={40}
-    loop={true}
-    autoplay={{ delay: 1800, disableOnInteraction: false }}
-    pagination={{ clickable: true }}
-    breakpoints={{
-      1200: { slidesPerView: 5 },
-      992: { slidesPerView: 4 },
-      768: { slidesPerView: 3 },
-      576: { slidesPerView: 2 },
-      0: { slidesPerView: 1 },
-    }}
-  >
-    <SwiperSlide>
-      <img src={sliderImage1} className={styles.logo} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src={sliderImage2} className={styles.logo} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src={sliderImage1} className={styles.logo} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src={sliderImage2} className={styles.logo} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src={sliderImage1} className={styles.logo} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src={sliderImage2} className={styles.logo} />
-    </SwiperSlide>
-  </Swiper>
-</div>
-
+        <Swiper
+          className={styles.swiperBox}
+          modules={[Autoplay, Pagination]}
+          slidesPerView={5}
+          spaceBetween={40}
+          loop={true}
+          autoplay={{ delay: 1800, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            1200: { slidesPerView: 5 },
+            992: { slidesPerView: 4 },
+            768: { slidesPerView: 3 },
+            576: { slidesPerView: 2 },
+            0: { slidesPerView: 1 },
+          }}
+        >
+          <SwiperSlide>
+            <img src={sliderImage1} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage2} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage3} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage4} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage5} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage6} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sliderImage7} className={styles.logo} />
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
       {/* -------- FOUR VIDEO GRID SECTION --------
       <div className={`my-5 ${styles.experincesection}`}>
