@@ -1,34 +1,38 @@
+/* ========= MAIN SECTION ========= */
 .dashboardSection {
-  padding: 40px 0 0 0;
-  justify-content: center;
   background: #fff;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: 4rem;
+  margin-bottom: 7rem;
 }
 
-/* ---------- HEADER ---------- */
-.dashboardHeader h2 {
-    justify-content: center;
+/* ========= HEADING ========= */
+.dashboardHeader {
   text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboardHeader h2 {
   font-size: 2rem;
   font-weight: 400;
   color: #252b43;
-  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .highlight {
   color: #ffd23e;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* ---------- GRID ---------- */
+/* ========= GRID ========= */
 .dashboardGrid {
-    width: 70%;
-    margin-left: 18rem;
+  width: 80%;
+  margin: auto;
   display: flex;
   gap: 36px;
   justify-content: center;
-  align-items: stretch; 
-  margin-bottom: 2.5rem;
+  align-items: stretch;
+  margin-bottom: 3rem;
 }
 
 .dashboardGridLeft,
@@ -36,135 +40,141 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  height: 100%;
+  flex: 1;
 }
 
-.dashboardGridLeft {
-  flex: 1 1 320px;
+/* LEFT BIG IMAGE = exact height of 2 small + gap */
+.dashboardGridLeft .dashboardImgCard {
+  height: calc(200px * 2 + 18px);
 }
 
-.dashboardGridRight {
-  flex: 1 1 320px;
+/* RIGHT TWO SMALL IMAGES */
+.dashboardGridRight .dashboardImgCard {
+  height: 200px;
 }
 
-/* ---------- IMAGE CARDS DEFAULT ---------- */
+/* ========= CARD STYLES ========= */
 .dashboardImgCard {
-    
   position: relative;
-  height: 180px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(40, 50, 80, 0.1);
-  background: #001d51;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s, box-shadow 0.25s;
+  background: #001d51;
 }
 
 .dashboardImgCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.93);
-  transition: filter 0.4s;
+  filter: brightness(0.92);
+  transition: 0.3s;
 }
 
 .dashboardImgCard:hover {
-  transform: scale(1.04);
-  box-shadow: 0 8px 32px rgba(40, 50, 80, 0.18);
+  transform: scale(1.03);
+  box-shadow: 0 8px 36px rgba(40, 50, 80, 0.22);
 }
 
 .dashboardCardLabel {
   position: absolute;
-  bottom: 18px;
+  bottom: 16px;
   left: 20px;
   color: #fff;
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  z-index: 2;
+  font-size: 1.45rem;
+  font-weight: 500;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ---------- FIX: Left = Right Both Combined ---------- */
-
-/* Right two boxes = fixed height */
-.dashboardGridRight .dashboardImgCard {
-  height: 200px !important;
-}
-
-/* Gap between them = 18px */
-
-/* Left big box = (200 + 18 + 200) = 418px */
-.dashboardGridLeft .dashboardImgCard {
-  height: calc(200px * 2 + 18px) !important; 
-}
-
-/* ---------- STATS BAR ---------- */
+/* ========= STATS ========= */
 .dashboardStatsBar {
   background: #001d51;
   color: #fff;
   display: flex;
   justify-content: space-evenly;
-  gap: 120px;
   padding: 45px 25px;
   font-size: 1.1rem;
-  border-radius: 2px;
   margin-top: 8px;
-
 }
 
 .statNumber {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  margin-bottom: 5px;
   display: block;
 }
 
 .statLabel {
-  font-size: 1.05rem;
+  font-size: 1rem;
   opacity: 0.85;
 }
 
-/* ---------- ANIMATIONS ---------- */
+/* ========= ANIMATIONS ========= */
 .animateIn {
   opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  animation: fadeinup 0.8s cubic-bezier(.43,1.8,.49,.95) forwards;
+  transform: translateY(40px) scale(0.95);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .delay {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 
 .delay2 {
-  animation-delay: 0.35s;
+  animation-delay: 0.3s;
 }
 
-@keyframes fadeinup {
+@keyframes fadeInUp {
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
   }
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ========= RESPONSIVE ========= */
+@media (max-width: 1100px) {
+  .dashboardGrid {
+    width: 90%;
+  }
+}
+
 @media (max-width: 950px) {
   .dashboardGrid {
     flex-direction: column;
-    gap: 18px;
-    align-items: center;
+    width: 92%;
   }
-
-  /* Left card becomes normal height in mobile */
-  .dashboardGridLeft .dashboardImgCard {
-    height: auto !important;
-    min-height: 260px;
+  .dashboardGridLeft .dashboardImgCard,
+  .dashboardGridRight .dashboardImgCard {
+    height: 240px !important;
   }
+}
 
-  .dashboardStatsBar {
-    gap: 40px;
-    padding: 22px 6px;
+@media (max-width: 650px) {
+  .dashboardGrid {
+    width: 100%;
+    padding: 0 4vw;
+  }
+  .dashboardGridLeft .dashboardImgCard,
+  .dashboardGridRight .dashboardImgCard {
+    height: 180px !important;
+  }
+  .dashboardCardLabel {
+    font-size: 1.15rem;
+  }
+  .statNumber {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .dashboardGridLeft .dashboardImgCard,
+  .dashboardGridRight .dashboardImgCard {
+    height: 140px !important;
+  }
+  .dashboardHeader h2 {
+    font-size: 1.1rem;
+  }
+  .dashboardCardLabel {
     font-size: 1rem;
   }
 }

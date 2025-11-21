@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.css";
 
-export default function Recognitionofawardies() {
+export default function Recognitiono() {
   return (
     <div className={styles.pageWrapper}>
       {/* Banner Image Full Width */}

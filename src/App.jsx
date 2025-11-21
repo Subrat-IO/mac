@@ -30,6 +30,8 @@ import QualityStatements from "./Components/Goals copy 4/cariom.jsx";
 import CapacityBuilding from "./Components/Pages/PublicPages/CapacityBuilding.jsx";
 import Recognitionofawardies from "./Components/Pages/PublicPages/recognisation.jsx";
 import FeesandServices from "./Components/Pages/FeesServices/fees&services.jsx";
+import Recognitiono from "./Components/Pages/PublicPages/recognisation.jsx";
+import DecisionAppeal from "./Components/Pages/PublicPages/DesicionAppeal.jsx";
 
 
 
@@ -60,7 +62,11 @@ function App() {
         <Route path="/downloadform" element={<DownloadsAndForms/>}/>
         <Route path="/faqs" element={<MACFaqs/>}/>
         <Route path="/fees" element={<FeesandServices/>}/>
+        <Route path="/recognisation" element={<Recognitiono/>}/>
+
         <Route path="/goals" element={<MACGoals/>}/>
+        <Route path="/decisionappeal" element={<DecisionAppeal/>}/>
+
         <Route path="/recognisationofbudies" element={<Recognitionofawardies/>}/>
         <Route path="/capacitybuilding" element={<CapacityBuilding/>}/>
         <Route path="/quality-statements" element={<QualityStatements/>}/>

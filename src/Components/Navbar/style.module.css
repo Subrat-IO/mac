@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   background: #00215a;
-  padding: 8px 0;
+  padding:12px 0;
   color: white;
   z-index: 10000;
 }
@@ -42,10 +42,9 @@
   top: 40px;
   left: 0;
   margin-top: -20px;
-
   width: 100%;
   background: white;
-  height: 90px;
+  height: 140px;
   border-bottom: 1px solid #ddd;
   z-index: 9000;
   display: flex;
@@ -63,14 +62,12 @@
 
 /* LOGO */
 .logo {
-  height: 50px;
+  height: 110px;
   margin-top: 1rem;
+  justify-content: center;
   cursor: pointer;
-  .logo {
   background: transparent;
-}
-
-  padding: 2px;
+  padding: 3px;
 }
 
 /* NAV LIST */
@@ -81,15 +78,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  
 }
 
 .navList a {
-  font-size: 15px;
+  font-size: 19px;
+  justify-content: center;
+  align-items: center;
   color: black;
   text-decoration: none;
   font-weight: 500;
-  
 }
 
 .navList a:hover {
@@ -115,6 +112,7 @@
   padding: 0;
   margin: 0;
   z-index: 9999;
+  box-shadow: 0 8px 24px rgba(60, 60, 90, 0.1);
 }
 
 .dropdownMenu li a {
@@ -125,9 +123,11 @@
 
 .dropdownMenu li a:hover {
   background: #f2f2f2;
+  color: #bebb15;
 }
 
-.dropdown:hover .dropdownMenu {
+.dropdown:hover .dropdownMenu,
+.dropdown:focus-within .dropdownMenu {
   opacity: 1;
   pointer-events: auto;
 }
@@ -137,60 +137,231 @@
   cursor: pointer;
 }
 
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 230px;
-  background: white;
-  border: 1px solid #ddd;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  z-index: 9999;
-}
-
-.dropdown:hover > .dropdownMenu,
-.dropdown:focus-within > .dropdownMenu {
-  opacity: 1;
-  pointer-events: auto;
-}
-
+/* SUBMENU */
 .hasSubmenu {
   position: relative;
 }
-
-
 
 .submenuRight {
   display: block;
   position: absolute;
   top: 0;
-  left: 100%; /* open to the right */
+  left: 100%;
   min-width: 230px;
   background: white;
   border: 1px solid #ddd;
-
-  box-shadow: 0 8px 24px rgba(60,60,90,0.10);
+  box-shadow: 0 8px 24px rgba(60, 60, 90, 0.1);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
   z-index: 10000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-
-.submenuRight:hover{
-  color: yellow;
-
+.submenuRight li a {
+  display: block;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
 }
+
 .hasSubmenu:hover > .submenuRight,
 .hasSubmenu:focus-within > .submenuRight {
-  color: yellow;
   opacity: 1;
   pointer-events: auto;
 }
 
+/* Mobile Menu Toggle (you'll need to add this button in your JSX) */
+.mobileMenuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00215a;
+  padding: 5px;
+}
 
+/* ================= RESPONSIVE STYLES ================= */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .navList {
+    gap: 20px;
+  }
+
+  .navList a {
+    font-size: 14px;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .mainNav {
+    height: 90px;
+  }
+}
+
+/* Tablets portrait and mobile landscape */
+@media (max-width: 768px) {
+  /* Top bar adjustments */
+  .leftInfo {
+    font-size: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .leftInfo span:nth-child(2),
+  .leftInfo span:nth-child(4) {
+    display: none; /* Hide separators on mobile */
+  }
+
+  .rightSocial svg {
+    font-size: 14px;
+  }
+
+  /* Main nav becomes mobile menu */
+  .mainNav {
+    height: 98px;
+  }
+
+  .logo {
+    height: 55px;
+    margin-top: 0.5rem;
+  }
+
+  .mobileMenuToggle {
+    display: block;
+  }
+
+  .navList {
+    position: fixed;
+    top: 110px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 110px);
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navList.open {
+    left: 0;
+  }
+
+  .navList > li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navList > li > a {
+    display: block;
+    padding: 15px 0;
+    font-size: 16px;
+  }
+
+  /* Dropdown adjustments for mobile */
+  .dropdownMenu {
+    position: static;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    border: none;
+    border-left: 3px solid #bebb15;
+    padding-left: 15px;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .dropdown.active .dropdownMenu {
+    max-height: 500px;
+  }
+
+  .dropdownMenu li a {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  /* Submenu adjustments for mobile */
+  .submenuRight {
+    position: static;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    border: none;
+    border-left: 3px solid #00215a;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-left: 15px;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .hasSubmenu.active > .submenuRight {
+    max-height: 300px;
+  }
+
+  .submenuRight li a {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .topBar {
+    padding: 6px 0;
+  }
+
+  .leftInfo {
+    font-size: 11px;
+  }
+
+  .barContent {
+    max-width: 98%;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .mainNav {
+    top: 35px;
+  }
+
+  .navList {
+    top: 95px;
+    height: calc(100vh - 95px);
+    padding: 15px;
+  }
+
+  .navList > li > a {
+    font-size: 15px;
+  }
+
+  .dropdownMenu li a {
+    font-size: 13px;
+  }
+
+  .submenuRight li a {
+    font-size: 12px;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navList {
+    height: calc(100vh - 60px);
+  }
+}

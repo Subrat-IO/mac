@@ -13,9 +13,9 @@ export default function ProgramApproval() {
         />
         {/* Overlay content if you want breadcrumb/title over the image */}
         <div className={styles.bannerOverlay}>
-          <h1 className={styles.pageTitle}>Accreditation</h1>
+          <h1 className={styles.pageTitle}>Program Approval</h1>
           <div className={styles.breadcrumb}>
-            <span>Home</span> <span className={styles.breadcrumbArrow}>–</span> <span>Accreditation</span>
+            <span>Home</span> <span className={styles.breadcrumbArrow}>–</span> <span>Program Approval</span>
           </div>
         </div>
       </div>
