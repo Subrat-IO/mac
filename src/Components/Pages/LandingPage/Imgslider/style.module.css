@@ -1,5 +1,6 @@
 /* Fullscreen slider */
 .slider {
+  margin-top: 5rem;
   width: 100%;
   height: 100vh;
   margin-top: 100px;
@@ -10,8 +11,8 @@
 /* Slide background */
 .slide {
   width: 100%;
-  height: 100%;
-  background-size: cover;
+  height: 80%;
+  background-size: contain;
   background-position: center center;
   display: flex;
   align-items: center;
@@ -34,14 +35,14 @@
   z-index: 1;
 }
 
-/* TEXT WRAPPER - appears AFTER image */
+/* TEXT WRAPPER */
 .content {
   position: relative;
   z-index: 5;
   max-width: 600px;
   opacity: 0;
   animation: fadeBlock 1s ease forwards;
-  animation-delay: 0.6s; /* Delay before text appears */
+  animation-delay: 0.6s;
 }
 
 /* Heading */
@@ -52,7 +53,7 @@
   margin-bottom: 12px;
   opacity: 0;
   animation: fadeUp 1.1s ease forwards;
-  animation-delay: 0.9s; /* After wrapper */
+  animation-delay: 0.9s;
 }
 
 /* Paragraph */
@@ -110,7 +111,41 @@
   right: 16px;
 }
 
-/* Animations */
+/* BOTTOM DOTS */
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #ffffff80;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.activeDot {
+  background: #ffc400;
+  transform: scale(1.3);
+}
+
+/* FOOTER LINE */
+.yellowline {
+  width: 100%;
+  
+  height: 25px;
+  padding: 2px;
+  background-color: yellow;
+}
+
+/* ANIMATIONS */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -123,12 +158,68 @@
 }
 
 @keyframes fadeBlock {
-  from {
-    opacity: 0;
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .fadeText { font-size: 42px; }
+  .content p { font-size: 17px; }
+}
+
+/* Large mobile */
+@media (max-width: 768px) {
+  .slider { height: 85vh; }
+  .slide { padding-left: 8%; }
+
+  .fadeText { font-size: 32px; }
+  .content p {
+    font-size: 16px;
+    max-width: 80%;
   }
-  to {
-    opacity: 1;
+
+  .fadeBtn { font-size: 15px; padding: 6px 16px; }
+
+  .arrow {
+    font-size: 26px;
+    top: unset;
+    bottom: 90px;
+  }
+
+  .dots {
+    bottom: 60px;
   }
 }
 
+/* Small mobile */
+@media (max-width: 480px) {
+  .slider { margin-top: 80px; height: 70vh; }
+
+  .fadeText {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .content p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .fadeBtn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .arrow {
+    bottom: 70px;
+    font-size: 22px;
+  }
+
+  .dot { width: 9px; height: 9px; }
+
+  .yellowline { height: 15px; background-color: #ffc400; }
+}
 
