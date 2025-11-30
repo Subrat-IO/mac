@@ -1,5 +1,5 @@
 .pageWrapper {
-  padding-top: 30px;
+  padding-top: 3px;
   background: #fafafe;
   min-height: 100vh;
   margin-top: 10rem;
@@ -8,7 +8,7 @@
 .bannerSection {
   text-align: center;
   padding: 3.5rem 0 1.5rem;
-  background: linear-gradient(90deg, #fff8ea 65%, #eee8dd 100%);
+  
 }
 
 .pageTitle {
@@ -86,5 +86,140 @@
   .providersTable th, .providersTable td {
     padding: 7px 4px;
     font-size: 0.97rem;
+  }
+}
+/* ================== MAIN PAGE WRAPPER ================== */
+.pageWrapper {
+  width: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  padding-bottom: 3rem;
+}
+
+/* ================== BANNER SECTION ================== */
+.bannerSection {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.pageTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.breadcrumb {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.breadcrumbArrow {
+  margin: 0 0.4rem;
+  opacity: 0.7;
+}
+
+/* ================== HEADING SECTION ================== */
+.centeredSection {
+  max-width: 900px;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* ================== TABLE STYLES ================== */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.providersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 1rem;
+  min-width: 700px;
+}
+
+.providersTable th {
+  background: #f6f7f9;
+  text-align: left;
+  padding: 0.9rem;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.providersTable td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.highlightCol {
+  color: #0d6efd;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.highlightCol:hover {
+  text-decoration: underline;
+}
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* 📱 Small Phones */
+@media (max-width: 576px) {
+  .bannerSection {
+    padding: 2.8rem 1rem;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .providersTable {
+    font-size: 0.85rem;
+    min-width: 600px;
+  }
+
+  .providersTable th,
+  .providersTable td {
+    padding: 0.6rem;
+    white-space: nowrap;
+  }
+}
+
+/* 📱📲 Tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* 🖥 Large Desktop */
+@media (min-width: 1200px) {
+  .pageTitle {
+    font-size: 2.6rem;
   }
 }

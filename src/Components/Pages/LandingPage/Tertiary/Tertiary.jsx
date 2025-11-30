@@ -3,18 +3,20 @@ import styles from "./style.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import sliderImage1 from "/slider1.jpeg";
-import sliderImage2 from "/aubmed.webp";
-import sliderImage3 from "/auis-01-01.webp";
-import sliderImage4 from "/BIMAP.webp";
-import sliderImage5 from "/BVTB.webp";
-import sliderImage6 from "/GRACETRUTH.webp";
-import sliderImage7 from "/holistic-01.webp";
+
+import logo1 from "/src/assets/slider1.jpeg";
+import logo3 from "/src/assets/college2.jpeg";
+import logo4 from "/src/assets/college3.jpeg";
+import logo5 from "/src/assets/college4.jpeg";
+import logo6 from "/src/assets/college5.jpeg";
+import logo7 from "/src/assets/college6.jpeg";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 function Tertiary() {
+  const logos = [logo1,  logo3, logo4, logo5, logo6, logo7];
+
   return (
     <div className={`container ${styles.container}`}>
       <div className="row align-items-center justify-content-center">
@@ -49,6 +51,7 @@ function Tertiary() {
           </div>
         </div>
       </div>
+
       {/* -------- LOGO SLIDER SECTION -------- */}
       <div className={`mx-auto text-center mb-5 mt-5 ${styles.sliderSection}`}>
         <h4 className={styles.logoTitle}>
@@ -71,84 +74,22 @@ function Tertiary() {
             0: { slidesPerView: 1 },
           }}
         >
-          <SwiperSlide>
-            <img src={sliderImage1} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage2} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage3} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage4} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage5} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage6} className={styles.logo} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={sliderImage7} className={styles.logo} />
-          </SwiperSlide>
+          {logos.map((logo, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  objectFit: "contain",
+                  padding: "5px",
+                }}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
-
-      {/* -------- FOUR VIDEO GRID SECTION --------
-      <div className={`my-5 ${styles.experincesection}`}>
-        <div className="row gy-5">
-
-          <div className="col-md-6">
-            <h4 className={styles.videoTitle}>Introduction to Recognition Services</h4>
-            <div className={styles.videoWrapperSmall}>
-              <iframe
-                src="https://www.youtube.com/embed/gbKeKIyC-i0"
-                title="Recognition Services Intro"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="col-md-6">
-            <h4 className={styles.videoTitle}>Recognition of Qualifications</h4>
-            <div className={styles.videoWrapperSmall}>
-              <iframe
-                src="https://www.youtube.com/embed/gbKeKIyC-i0"
-                title="Recognition of Qualifications"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="col-md-6">
-            <h4 className={styles.videoTitle}>Verification of Qualifications</h4>
-            <div className={styles.videoWrapperSmall}>
-              <iframe
-                src="https://www.youtube.com/embed/gbKeKIyC-i0"
-                title="Verification of Qualifications"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="col-md-6">
-            <h4 className={styles.videoTitle}>Programme Recognition</h4>
-            <div className={styles.videoWrapperSmall}>
-              <iframe
-                src="https://www.youtube.com/embed/gbKeKIyC-i0"
-                title="Programme Recognition"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-        </div>
-      </div> */}
     </div>
   );
 }

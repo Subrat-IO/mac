@@ -215,3 +215,52 @@
     width: 130px;
   }
 }
+
+/* Ensure images scale within containers */
+.responsiveImage,
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bootstrap's col-md-5 is 5/12 width (~41.67%). On mobile stack columns */
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
+  .col-md-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 25px;
+  }
+  .videoWrapper {
+    max-width: 100% !important;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Adjust container padding on small screens */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .sliderSection {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Reduce slide spacing on small devices to fit */
+@media (max-width: 576px) {
+  .swiperBox {
+    padding-bottom: 15px !important;
+  }
+  .swiper-slide {
+    margin-right: 15px !important; /* reduce gap */
+  }
+}
+
